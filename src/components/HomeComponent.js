@@ -39,6 +39,12 @@ const Show = ({show}) => {
 const ShowListByGenre = ({shows, genre, max}) => {
   let list = shows.filter((show) => show._embedded.show.genres.includes(genre));
 
+  //don't include shows without a rating
+  list = list.filter((show) => show._embedded.show.rating.average);
+
+  //sort by rating
+  list = list.sort((a, b) => (a._embedded.show.rating.average < b._embedded.show.rating.average) ? 1 : -1)
+
   return(
     <div className="row">
       <div className="col-12 mt-4">

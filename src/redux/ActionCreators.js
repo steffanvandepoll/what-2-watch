@@ -25,6 +25,22 @@ export const fetchShows = () => (dispatch) => {
     .catch(error => dispatch(showsFailed(error.message)));
 }
 
+const filterUniqueShows = (shows) => {
+  let uniqueIDs = [];
+  let uniqueShows = [];
+  let id = null;
+
+  shows.forEach(show => {
+    id = show._embedded.show.id;
+    if(!uniqueIDs.includes(id)){
+      uniqueIDs.push(id);
+      uniqueShows.push(show);
+    }
+  });
+
+  return uniqueShows;
+}
+
 export const showsLoading = () => ({
     type: ActionTypes.SHOWS_LOADING
 });
@@ -36,7 +52,7 @@ export const showsFailed = (errmess) => ({
 
 export const addShows = (shows) => ({
     type: ActionTypes.ADD_SHOWS,
-    payload: shows
+    payload: filterUniqueShows(shows)
 });
 
 
