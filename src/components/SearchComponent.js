@@ -50,7 +50,7 @@ class Search extends Component {
       <div className="container">
         <div className="row">
           <div className="col-12 mt-4">
-            <h3>Search</h3>
+            <h3>Results for '{this.props.searchValue}'</h3>
             <hr />
           </div>
           {this.props.shows.map((result) => {

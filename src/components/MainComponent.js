@@ -32,7 +32,7 @@ class Main extends Component {
     super(props);
     this.state = {
       showId: null,
-      searchValue: null
+      searchValue: ""
     };
   }
 
@@ -68,7 +68,7 @@ class Main extends Component {
   render() {
     return (
       <Fragment>
-        <Header />
+        <Header searchValue={this.state.searchValue} />
         <TransitionGroup>
           <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
             <Switch location={this.props.location}>
