@@ -1,6 +1,8 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/urls';
 
+import fetch from 'cross-fetch';
+
 //Fetching the full schedule
 export const fetchShows = () => (dispatch) => {
 
