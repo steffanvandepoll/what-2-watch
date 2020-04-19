@@ -92,3 +92,40 @@ export const addShowDetails = (showDetails) => ({
     type: ActionTypes.ADD_SHOW_DETAILS,
     payload: showDetails
 });
+
+//fetch a list of shows by a query
+export const searchForShowsByValue = (value) => (dispatch) => {
+    dispatch(searchLoading(true));
+
+    return fetch(baseUrl + "/search/shows?q=" + value)
+    .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          var error = new Error('Error ' + response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      error => {
+            var errmess = new Error(error.message);
+            throw errmess;
+      })
+    .then(response => response.json())
+    .then(show => dispatch(addFoundShows(show)))
+    .catch(error => dispatch(searchFailed(error.message)));
+}
+
+export const searchLoading = () => ({
+    type: ActionTypes.SEARCH_LOADING
+});
+
+export const searchFailed = (errmess) => ({
+    type: ActionTypes.SEARCH_FAILED,
+    payload: errmess
+});
+
+export const addFoundShows = (foundShows) => ({
+    type: ActionTypes.ADD_FOUND_SHOWS,
+    payload: foundShows
+});

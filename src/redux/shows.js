@@ -15,7 +15,7 @@ export const Shows = (state = { isLoading: true, errMess: null, shows:[]}, actio
     }
 };
 
-export const ShowDetails= (state = { isLoading: true, errMess: null, showDetails: null}, action) => {
+export const ShowDetails = (state = { isLoading: true, errMess: null, showDetails: null}, action) => {
     switch (action.type) {
         case ActionTypes.ADD_SHOW_DETAILS:
             return {...state, isLoading: false, errMess: null, showDetails: action.payload};
@@ -24,6 +24,21 @@ export const ShowDetails= (state = { isLoading: true, errMess: null, showDetails
             return {...state, isLoading: true, errMess: null, showDetails: []}
 
         case ActionTypes.SHOW_DETAILS_FAILED:
+            return {...state, isLoading: false, errMess: action.payload};
+        default:
+            return state;
+    }
+};
+
+export const Search = (state = { isLoading: true, errMess: null, foundShows:[]}, action) => {
+    switch (action.type) {
+        case ActionTypes.ADD_FOUND_SHOWS:
+            return {...state, isLoading: false, errMess: null, foundShows: action.payload};
+
+        case ActionTypes.SEARCH_LOADING:
+            return {...state, isLoading: true, errMess: null, foundShows: []}
+
+        case ActionTypes.SEARCH_FAILED:
             return {...state, isLoading: false, errMess: action.payload};
         default:
             return state;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody,
-    CardTitle, CardImgOverlay} from 'reactstrap';
+    CardTitle, CardSubtitle, CardImgOverlay} from 'reactstrap';
 
 import styled from 'styled-components'
 import { Link } from "react-router-dom";
@@ -13,6 +13,9 @@ const StyledCard = styled(Card)`
     top: auto;
     background-color: rgba(0, 0, 0, 0.6);
     color:#FFFFFF;
+    .card-subtitle{
+      font-weight: bold;
+    }
   }
 
   &:hover{
@@ -29,6 +32,7 @@ const Show = ({show}) => {
           <CardImg width="100%" src={show.image.medium} alt={show.name} />
           <CardImgOverlay>
             <CardTitle>{show.name}</CardTitle>
+            <CardSubtitle>rating: {show.rating.average}</CardSubtitle>
           </CardImgOverlay>
         </StyledCard>
       </Link>
@@ -58,10 +62,7 @@ const ShowListByGenre = ({shows, genre, max}) => {
 
     </div>
   )
-
 }
-
-
 
 function Home(props) {
     return(
