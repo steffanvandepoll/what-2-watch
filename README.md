@@ -24,7 +24,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Launches the test runner in the interactive watch mode.<br />
 
-For testing I did not have enough time to cover as much of the code as required.
+Unfortunatly I did not have enough time to incorporate all the unit tests I wanted. To properly tests this mock responses for the fetches have been prepared in a separate data file with more time they could have been used to tests happy and bad flows in the requests.
+Also interaction with different components should be properly tested.
 
 ### `npm run build`
 
@@ -34,3 +35,12 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br />
 
 This script is also used by Netflify allowing for continues deployment. - https://what-2-watch.netlify.app/
+
+
+## Next steps
+Next steps in the development of this application would be the separation of variables such as colors in a theme. Also localisation should be used for al language strings.
+More test cases should be implemented and all actions and interactions should be properly tested.
+
+For the UI a sidescrolling panel should be implemented so more show's can be displayed. This also provides a better experience on mobile views. 
+
+For search an autocomplete functionality could also help the user in finding shows that are Available via the API.
