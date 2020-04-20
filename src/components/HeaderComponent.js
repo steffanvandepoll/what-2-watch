@@ -9,6 +9,10 @@ const StyledNavbar = styled(Navbar)`
   box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 5px;
 `;
 
+const StyledForm = styled(Form)`
+  display: flex;
+`;
+
 
 class Header extends Component {
 
@@ -49,10 +53,10 @@ class Header extends Component {
                     </NavItem>
 
                   </Nav>
-                  <Form inline={true} onSubmit={(e) => this.handleSubmit(e)}>
+                  <StyledForm onSubmit={(e) => this.handleSubmit(e)}>
                     <Input onChange={this.handleInputChange} name="search" type="search" id="search" value={this.state.searchValue} placeholder="Search" />
                     <Button className="ml-2" type="submit">Search</Button>
-                  </Form>
+                  </StyledForm>
             </div>
         </StyledNavbar>
       );
