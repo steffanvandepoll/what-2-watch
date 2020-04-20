@@ -27,7 +27,7 @@ const StyledCard = styled(Card)`
 const ShowCard = ({show}) => {
   return show.image ?
     (
-      <div className="col-lg-3 col-md-6 mb-4">
+      <div className="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
         <Link to={`/show/${show.id}`}>
           <StyledCard>
             <CardImg width="100%" src={show.image.medium} alt={show.name} />

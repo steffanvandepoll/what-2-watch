@@ -38,7 +38,7 @@ const ShowHeader = ({show, isLoading}) => {
                  {isLoading || !show ? null : <CardImg width="100%" src={show.image.original} alt={show.name} />}
               </StyledCard>
             </div>
-            <div className="col-12 col-md-9 d-flex align-items-center">
+            <div className="col-12 col-md-9 d-flex align-items-center mt-sm-4">
               <h1>{show.name}</h1>
             </div>
         </div>
