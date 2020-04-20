@@ -8,6 +8,6 @@ import { Router } from 'react-router-dom'
 import Main from "../components/MainComponent"
 
 test('Main ', () => {
-
+  //TODO implment test with mock store 
 
 });
