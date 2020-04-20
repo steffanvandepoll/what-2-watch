@@ -35,7 +35,6 @@ class Header extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let value = this.state.searchValue;
     this.setState({
       searchValue: "",
     });

@@ -1,5 +1,5 @@
 import React, { Component, Fragment} from 'react';
-import {Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, CardImg} from "reactstrap";
+import {Card, CardBody, CardHeader, CardImg} from "reactstrap";
 
 import styled from 'styled-components'
 
@@ -80,7 +80,7 @@ class ShowDetail extends Component {
                     <dt className="col-4">language</dt>
                     <dd className="col-8">{this.props.show.language}</dd>
                     <dt className="col-4">genres</dt>
-                    <dd className="col-8">{this.props.show.genres ? this.props.show.genres.map((genre) => <Tag>{genre}</Tag>) : null}</dd>
+                    <dd className="col-8">{this.props.show.genres ? this.props.show.genres.map((genre) => <Tag key={genre}>{genre}</Tag>) : null}</dd>
                     <dt className="col-4">premiered</dt>
                     <dd className="col-8">{this.props.show.premiered}</dd>
                   </dl>

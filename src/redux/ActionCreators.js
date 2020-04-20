@@ -5,7 +5,6 @@ import fetch from 'cross-fetch';
 
 //Fetching the full schedule
 export const fetchShows = () => (dispatch) => {
-    console.log("fetching shows")
     dispatch(showsLoading(true));
 
     return fetch(baseUrl + "schedule/full")
